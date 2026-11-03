@@ -1,0 +1,44 @@
+---
+layout: default
+---
+<div class="wrap home-grid">
+  <div class="home-main">
+    {{ content }}
+    <ol class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <article class="post-card">
+            <p class="meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y年%-m月%-d日" }}</time>
+              {% for cat in post.categories %}
+                {% include cat-link.html name=cat %}
+              {% endfor %}
+            </p>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            {% if post.description %}
+              <p>{{ post.description }}</p>
+            {% endif %}
+          </article>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+  <aside class="rail" aria-label="专题">
+    <section>
+      <h2>专题</h2>
+      <ul class="rail-topics">
+        {% for topic in site.data.topics %}
+          <li>
+            <a href="{{ '/topics/' | relative_url }}#{{ topic.slug }}">{{ topic.name }}</a>
+            <p>{{ topic.summary }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      <h2>怎么读</h2>
+      <p>每篇都写成能在控制台里核对的步骤，并链到官方文档。按钮名称对不上时，以文档为准，不要死记截图式路径。</p>
+      <p><a href="{{ '/about/' | relative_url }}">关于这个笔记站</a></p>
+    </section>
+  </aside>
+</div>

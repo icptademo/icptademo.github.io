@@ -1,0 +1,23 @@
+---
+layout: page
+title: 专题
+permalink: /topics/
+description: 按安全、地域与网络、账号与账单、选型查阅国际云实战笔记。
+---
+
+{% for topic in site.data.topics %}
+<section class="topic" id="{{ topic.slug }}">
+  <h2>{{ topic.name }}</h2>
+  <p>{{ topic.summary }}</p>
+  <ul>
+    {% for post in site.categories[topic.name] %}
+      <li>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="meta">{{ post.date | date: "%Y年%-m月%-d日" }}</span>
+      </li>
+    {% else %}
+      <li>这个专题还没有笔记。</li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

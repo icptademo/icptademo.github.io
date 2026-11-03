@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="seal" aria-hidden="true">云</span>
+      <span class="brand-text">
+        <span class="brand-name">国际云实战笔记</span>
+        <span class="brand-tag">能照着做的国际云步骤</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="站点">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>笔记</a>
+      <a href="{{ '/topics/' | relative_url }}"{% if page.url == '/topics/' %} aria-current="page"{% endif %}>专题</a>
+      <a href="{{ '/tags/' | relative_url }}"{% if page.url == '/tags/' %} aria-current="page"{% endif %}>标签</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>关于</a>
+    </nav>
+  </div>
+</header>

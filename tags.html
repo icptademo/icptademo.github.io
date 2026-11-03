@@ -1,0 +1,29 @@
+---
+layout: page
+title: 标签
+permalink: /tags/
+description: 国际云实战笔记的全部标签。
+---
+
+{% assign sorted_tags = site.tags | sort %}
+{% for tag in sorted_tags %}
+  {% assign tag_name = tag[0] %}
+  {% assign tag_posts = tag[1] %}
+  {% assign tag_slug = tag_name | slugify: "pretty" %}
+  {% for item in site.data.tag_slugs %}
+    {% if item.name == tag_name %}
+      {% assign tag_slug = item.slug %}
+    {% endif %}
+  {% endfor %}
+  <section class="tag-block" id="{{ tag_slug }}">
+    <h2>{{ tag_name }}</h2>
+    <ul>
+      {% for post in tag_posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="meta">{{ post.date | date: "%Y年%-m月%-d日" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

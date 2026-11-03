@@ -1,0 +1,15 @@
+- slug: security
+  name: 安全
+  summary: 主账号、多因素认证、子账号和操作审计。注册完成后先做这些，再购买资源。
+
+- slug: regions
+  name: 地域与网络
+  summary: 地域隔离什么、产品在哪里可售，以及怎样确认区域真的买得到。
+
+- slug: billing
+  name: 账号与账单
+  summary: 根账号与组织、付款方式、余额和预算告警。五家云的账单结构并不相同。
+
+- slug: choosing
+  name: 选型
+  summary: 按游戏、音视频、AI 训练这些负载选云，而不是按广告语选。

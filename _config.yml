@@ -1,0 +1,53 @@
+title: 国际云实战笔记
+tagline: 阿里云国际、腾讯云国际、AWS、Google Cloud 与 Azure 的实操记录
+description: >-
+  面向正在使用国际云的中文读者。记录账号安全、地域是否可售、付款与账单，
+  以及游戏、音视频和 AI 训练如何选云。步骤会过时，文内链到官方文档。
+url: https://icptademo.github.io
+baseurl: ""
+lang: zh_CN
+timezone: Asia/Shanghai
+author:
+  name: 国际云实战笔记
+
+permalink: /:year/:month/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  auto_ids: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - scripts
+  - node_modules
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: 国际云实战笔记
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page

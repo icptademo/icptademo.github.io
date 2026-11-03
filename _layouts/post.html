@@ -1,0 +1,45 @@
+---
+layout: default
+---
+{%- assign chars = content | strip_html | size -%}
+{%- assign minutes = chars | divided_by: 450 -%}
+{%- if minutes < 1 -%}{%- assign minutes = 1 -%}{%- endif -%}
+<article class="post wrap-narrow">
+  <header class="post-header">
+    <p class="meta">
+      {% for cat in page.categories %}
+        {% include cat-link.html name=cat %}
+      {% endfor %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
+      <span>约 {{ minutes }} 分钟</span>
+      {% if page.checked %}
+        <span>核对于 {{ page.checked | date: "%Y年%-m月%-d日" }}</span>
+      {% endif %}
+    </p>
+    <h1>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="dek">{{ page.description }}</p>
+    {% endif %}
+    {% if page.tags %}
+      <ul class="tag-list">
+        {% for tag in page.tags %}
+          <li>{% include tag-link.html name=tag %}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </header>
+  <div class="post-content">
+    {{ content }}
+  </div>
+  <footer class="post-footer">
+    <p class="doc-note">厂商会调整控制台文案、配额和计费规则。某一步对不上时，打开文内的官方文档看更新时间，再决定怎么点。</p>
+    <nav class="post-nav" aria-label="相邻笔记">
+      {% if page.next %}
+        <a class="next" href="{{ page.next.url | relative_url }}"><span>较新</span>{{ page.next.title }}</a>
+      {% endif %}
+      {% if page.previous %}
+        <a class="prev" href="{{ page.previous.url | relative_url }}"><span>较早</span>{{ page.previous.title }}</a>
+      {% endif %}
+    </nav>
+  </footer>
+</article>

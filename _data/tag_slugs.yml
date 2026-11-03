@@ -1,0 +1,17 @@
+- { name: 阿里云国际, slug: aliyun }
+- { name: 腾讯云国际, slug: tencent-cloud }
+- { name: AWS, slug: aws }
+- { name: Google Cloud, slug: google-cloud }
+- { name: Azure, slug: azure }
+- { name: MFA, slug: mfa }
+- { name: RAM, slug: ram }
+- { name: 安全, slug: security }
+- { name: 地域, slug: region }
+- { name: 可用区, slug: availability-zone }
+- { name: Organizations, slug: organizations }
+- { name: 账单, slug: billing }
+- { name: 付款, slug: payment }
+- { name: 选型, slug: choosing }
+- { name: 游戏, slug: games }
+- { name: 音视频, slug: media }
+- { name: AI, slug: ai }

@@ -1,0 +1,8 @@
+{%- assign cat_name = include.name -%}
+{%- assign cat_slug = cat_name | slugify: "pretty" -%}
+{%- for item in site.data.topics -%}
+  {%- if item.name == cat_name -%}
+    {%- assign cat_slug = item.slug -%}
+  {%- endif -%}
+{%- endfor -%}
+<a class="cat" href="{{ '/topics/' | relative_url }}#{{ cat_slug }}">{{ cat_name }}</a>

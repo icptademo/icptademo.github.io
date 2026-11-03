@@ -1,0 +1,8 @@
+{%- assign tag_name = include.name -%}
+{%- assign tag_slug = tag_name | slugify: "pretty" -%}
+{%- for item in site.data.tag_slugs -%}
+  {%- if item.name == tag_name -%}
+    {%- assign tag_slug = item.slug -%}
+  {%- endif -%}
+{%- endfor -%}
+<a href="{{ '/tags/' | relative_url }}#{{ tag_slug }}">{{ tag_name }}</a>
