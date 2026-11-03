@@ -15,3 +15,8 @@
 - { name: 游戏, slug: games }
 - { name: 音视频, slug: media }
 - { name: AI, slug: ai }
+- { name: IAM, slug: iam }
+- { name: 预算, slug: budget }
+- { name: 审计, slug: audit }
+- { name: 交接, slug: handover }
+- { name: 资源组, slug: resource-group }
